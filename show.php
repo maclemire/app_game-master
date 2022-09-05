@@ -2,7 +2,7 @@
 /**
  * This file shows a single game
  */
-// session_start();
+session_start();
 include("models/database.php");
 $game = getGame();
 $title = $game['name'];

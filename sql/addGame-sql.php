@@ -1,4 +1,5 @@
 <?php
+require_once('models/database.php');
 //1- ecriture de la requette
 $sql = "INSERT INTO jeux(name, price, genre, note, plateforms, description, PEGI, created_at, url_img) VALUES(:name, :price, :genre, :note, :plateforms, :description, :PEGI, NOW(), :url_img)";
 
