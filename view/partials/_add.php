@@ -1,21 +1,3 @@
-<?php $error = [];
-$errorMessage = "<span class=text-red-500>*Ce champs est obligatoire</span>";
-// variable success
-$success = false;
-
-
-// 1-je verifie si le formulaire est soumis
-if (!empty($_POST["submited"]) && isset($_FILES["url_img"]) && $_FILES["url_img"]["error"] == 0) {
-//2-je fais les failles xss
-//3-validation de chaque input
-require_once("utils/form-security/include.php");
-debug_array($error);
-// //4- if no error
-if (count($error) == 0) {
-require_once("sql/addGame-sql.php");
-}
-} ?>
-
 <section class="py-16 ">
     <a href="index.php" class="text-blue-500 text-sm">
         <- retour </a>
