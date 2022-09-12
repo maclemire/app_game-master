@@ -2,21 +2,9 @@
 session_start();
 // start session
 
-require_once("models/database.php");
-$game = getGame();
-$title = $game['name'];
+require_once('controllers/Game.php');
 
-$error = [];
-$errorMessage = "<span class=text-red-500>*Ce champs est obligatoire</span>";
-
-if (!empty($_POST["submited"])) {
-    require_once("utils/form-security/include.php");
-    if (count($error) == 0) {
-        update($name, $price, $note, $description, $genre_clear, $plateforms_clear, $PEGI, $url_img);
-    }
-}
-
-require('view/updatePage.php')
-?>
+$controller = new \Controllers\Game();
+$controller->update();
 
 

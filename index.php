@@ -3,12 +3,8 @@
  * This file shows the HomePage
  */
 session_start();
+require_once('controllers/Game.php');
 
-/**
- * Getting all games from models then stocking them in an array $games
- */
-require_once("models/Game.php");
-$model = new Game();
-$games =  $model->getAllGames();
-require("view/homePage.php");
-?>
+$controller = new \Controllers\Game();
+$controller->index();
+
